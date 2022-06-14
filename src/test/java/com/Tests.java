@@ -16,5 +16,6 @@ public class Tests extends Base{
         stock.setRubUsd(getActualRadeRubUsd());
         stock.setProfitUsd(stock.profitUSD());
         stock.setProfitPerc(stock.profitUSDPerc());
+        System.out.println(stock.toString());
     }
 }

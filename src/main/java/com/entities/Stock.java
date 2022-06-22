@@ -1,28 +1,24 @@
 package com.entities;
 
-import lombok.AllArgsConstructor;
+import com.jdiai.tools.DataClass;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 @Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
-public class Stock {
-    private float usdTry;
-    private float tryUsdt;
-    private float usdtRub;
-    private float rubUsd;
-    private float profitUsd;
-    private float profitPerc;
+public class Stock extends DataClass<Stock> {
+    public float usdTry;
+    public float tryUsdt;
+    public float usdtRub;
+    public float rubUsd;
+    public float profitUsd;
+    public float profitPerc;
 
     public float profitUSD() {
         return (float) (2000 * getUsdTry() / getTryUsdt() * getUsdtRub() / getRubUsd() * 0.996 - 2000 - 25);
     }
+
 
     public float profitUSDPerc() {
         return profitUSD() / 20;

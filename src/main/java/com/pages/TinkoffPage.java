@@ -5,7 +5,8 @@ import com.epam.jdi.light.elements.pageobjects.annotations.locators.UI;
 import com.epam.jdi.light.ui.html.elements.common.Text;
 
 public class TinkoffPage extends WebPage {
-    @UI("(//span[@class='Money-module__money_UZBbh'])[8]")
+
+    @UI("(//span[contains(@data-qa-type,'uikit/money')])[8]")
     private static Text rate;
 
     public static float getCurrentRate(){
